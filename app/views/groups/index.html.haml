@@ -7,7 +7,7 @@
       %ul
         - for group in @my_groups
           %li
-            = image_tag(group.image.present? ? group.image.url('39x39!') : "images/thumbnails/users32.png", :class => "icon")
+            = image_tag(group.image.present? ? group.image.url('39x39!') : "thumbnails/users32.png", :class => "icon")
             = link_to(image_tag("icons/plus.png") + " Share", shares_path(:group => group.id), :class => "button")
             %h3= link_to(group.name, group_path(group))
             %p= truncate(group.description, :length => 160)
@@ -26,7 +26,7 @@
         - for group in @groups
           - if group.creator != current_user
             %li
-              = image_tag(group.image.present? ? group.image.url('39x39!') : "images/thumbnails/users32.png", :class => "icon")
+              = image_tag(group.image.present? ? group.image.url('39x39!') : "thumbnails/users32.png", :class => "icon")
               = link_to(image_tag("icons/door-open-in.png") + " Unjoin", unjoin_group_path(group), :method => :delete, :class => "button")
               %h3= link_to(group.name, group_path(group))
               %p= group.description

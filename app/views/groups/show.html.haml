@@ -1,5 +1,5 @@
 #group_icon.grid_1.alpha
-  = image_tag(@group.image.url('39x39!'), :class => "icon")
+  = image_tag(group.image.present? ? group.image.url('39x39!') : "thumbnails/users32.png", :class => "icon")
 #group_info.grid_7
   %h1= @group.name
   %h3 Created by:
