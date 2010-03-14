@@ -4,4 +4,3 @@ db/schema.rb
 doc/*
 routes.txt
 tmp/*
-

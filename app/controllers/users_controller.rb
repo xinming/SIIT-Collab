@@ -26,8 +26,17 @@ class UsersController < ApplicationController
 
   # PUT account_url
   def update
-    render :text => params[:user].to_yaml + '<br/>' + params[:password].to_yaml
-    # find and update the account
+    @title = "Account Settings"
+    @user = User.find(current_user.id)
+    if not params[:user].nil?
+      if @user.update_attributes(params[:user])
+        flash[:success] = "Settings to \"#{@group.name}\" is updated."
+        redirect_to @group
+      else
+        flash[:error] = "Settings to \"#{@group.name}\" is not saved because of some errors."
+        render :edit
+      end
+    else
   end
 
   # DELETE account_url
