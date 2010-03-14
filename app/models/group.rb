@@ -10,6 +10,8 @@ class Group < ActiveRecord::Base
   # has_many :shares, :through => :share_with_groups, :class_name => "Share", :foreign_key => "share_id"
   has_many :shares, :class_name => "Share", :foreign_key => "group_id"
   
+  image_accessor :image
+  
   def is_member_of?(user)
     return members.include?(user)
   end 

@@ -1,5 +1,6 @@
 %h1= "#{@group.name} Settings"
-- semantic_form_for @group do |form|
+- semantic_form_for @group, :html => {:multipart => true} do |form|
+  = form.input :image, :as => :file
   = form.inputs :name, :description
   %fieldset.inputs
     %ol

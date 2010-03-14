@@ -1,5 +1,5 @@
 #all_groups.block.groups_list
-  %h2 
+  %h2
     All Groups
     %span.description &mdash; All the groups that are available in this domain.
   .content
@@ -13,12 +13,12 @@
                 Joined
             - else
               = link_to(image_tag("icons/door-open-out.png") + " Join", join_group_path(group), :method => :post, :class => "button")
-            = image_tag("thumbnails/users32.png", :class => "icon")
+            = image_tag(group.image.present? ? group.image.url('39x39!') : "thumbnails/users32.png", :class => "icon")
             %h3
               = link_to(group.name, group_path(group))
               %span= "by #{group.creator.fullname}"
             %p= truncate(group.description, :length => 160)
     - else
-      %p 
+      %p
         There are currently no groups created.
         = link_to("Create a group?", new_group_path)
