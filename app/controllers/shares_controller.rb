@@ -18,6 +18,8 @@ class SharesController < ApplicationController
     case params[:type]
       when 'video'
         @share = Video.new(:share => Share.new)
+      when 'picture'
+        @share = Picture.new(:share => Share.new)
       when 'news'
         @share = News.new(:share => Share.new)
     end
@@ -29,6 +31,8 @@ class SharesController < ApplicationController
     case params[:type]
     when 'video'
       @share = Video.new(params[:video])
+    when 'picture'
+        @share = Picture.new(params[:picture])
     when 'news'
       @share = News.new(params[:news])
     end

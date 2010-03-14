@@ -3,7 +3,8 @@
   %h2 What would you like to share?
   %ul
     %li= link_to image_tag("icons/newspaper.png") + " News or Announcement", new_share_path(:type => "news", :group => params[:group])
-    %li= link_to image_tag("icons/slide-powerpoint.png") + " Presentation", new_share_path(:type => "video", :group => params[:group])
+    %li= link_to image_tag("document.png") + " Document", new_share_path(:type => "document", :group => params[:group])
+    %li= link_to image_tag("icons/image.png") + " Picture", new_share_path(:type => "picture", :group => params[:group])
     %li= link_to image_tag("icons/film.png") + " YouTube Video", new_share_path(:type => "video", :group => params[:group])
   %p
     =link_to "Back", shares_path

@@ -2,4 +2,4 @@
   %h1 Which group would you like to share with?
   %ul
     - for group in @groups
-      %li= link_to image_tag("icons/users.png") + ' ' + group.name, shares_path(:group => group.id)    
+      %li= link_to image_tag(group.image.present? ? group.image.url('32x32!') : "thumbnails/users32.png", :class => "icon") + ' ' + group.name, shares_path(:group => group.id)
