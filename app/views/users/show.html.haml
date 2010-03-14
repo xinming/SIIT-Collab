@@ -1,0 +1,13 @@
+%h1
+  = "#{current_user.first_name} #{current_user.last_name}"
+%p
+  %strong Username:
+  = current_user.login
+%p
+  %strong E-mail:
+  = current_user.email
+%p
+  %strong Last login:
+  = current_user.last_login_at
+#actions
+  %span.small= link_to(image_tag("icons/gear.png") + " Account Settings", edit_user_url, :class => "button")

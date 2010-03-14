@@ -1,0 +1,101 @@
+body { background: #fff url("../images/bg.png") repeat-x scroll top center;}
+img { vertical-align: middle;}
+li { list-style: disc;}
+
+a { color: #4183cd; }
+a img { text-decoration: none !important;}
+a:hover { color: #DB6D33;}
+a.button { padding: 5px; background: #dfdfdf url("../images/button_bg.png") repeat-x scroll top center; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-weight: bold; color: #555; border: 1px solid #ccc; text-decoration: none;}
+a.button:hover { border-color: #999;}
+
+#body { background: transparent url("../images/content_bg.png") no-repeat scroll top center; min-height: 400px; padding-top: 20px;}
+#header { margin-bottom: 20px;}
+
+span.small { font-size: 12px; }
+
+#flash ul, #flash li { margin: 0; padding: 0; list-style: none;}
+#flash li { padding: 10px; font-size: 16px; background: #fff; border: 1px solid #ccc;  -moz-border-radius: 5px; -webkit-border-radius: 5px;  }
+#flash li.success { background-color: #C2E5AA; border: none;}
+#flash li.error { background-color: #E7A8B1; border: none;}
+
+#menu { text-align: right;}
+#menu ul, #menu li { margin: 0; padding: 0; }
+#menu ul { float: right;}
+#menu li { display: block; float: left; font-size: 14px; text-shadow: 0px 1px 0px #fff; height: 50px; line-height: 45px; padding: 0px 10px; background: transparent url("../images/menu_bg.png") repeat-x scroll top center; }
+#menu li.left { background: transparent url("../images/menu_l.png") no-repeat scroll left center; padding: 0; width: 15px;}
+#menu li.right { background: transparent url("../images/menu_r.png") no-repeat scroll left center; padding: 0; width: 15px;}
+#menu li.sep { background: transparent url("../images/menu_sep.png") no-repeat scroll left center; padding: 0; width: 15px;}
+#menu li.user { font-weight: bold;  }
+#menu li.user .avatar { width: 25px; height: 25px; background: #fff;-moz-border-radius: 5px; -webkit-border-radius: 5px; border: 1px solid #ccc;}
+#menu li a { font-weight: bold; text-decoration: none;}
+
+#content h1 { text-transform: capitalize; color: #666; }
+
+#share ul, #share li { list-style: none;}
+#share li { margin-bottom: 10px;}
+#share li a { font-size: 16px; text-decoration: none;}
+#share h2 { font-size: 14px;}
+
+#right { background: #fff; width: 338px; border: 1px solid #ccc; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+#right .content { padding: 10px; font-size: 14px; background: #fff url("../images/right_bg.png") repeat-x scroll top center; border: 3px solid #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+#right h2 { font-size: 12px; color: #666; }
+
+.block { margin-bottom: 20px; }
+.block h2 { color: #333; font-size: 14px; padding: 5px; border-bottom: 1px solid #ccc;}
+.block h2 .description { font-weight: normal; font-size: 11px; color: #999;}
+.block h2 .description { font-weight: normal; font-size: 11px; color: #999;}
+
+.groups_list ul, .groups_list li { margin: 0; padding: 0; list-style: none;}
+.groups_list li { margin-bottom: 10px; overflow: auto; padding-bottom: 10px; position: relative;}
+.groups_list li.last { border-bottom: none;}
+.groups_list li h3 { font-size: 14px; margin-bottom: 0;}
+.groups_list li h3 span { font-size: 12px; font-weight: normal; color: #999;}
+.groups_list li p { font-size: 12px; margin-bottom: 0;}
+.groups_list li img.icon { float: left; padding: 7px; border: 1px solid #ccc; margin: 0 10px 10px 0; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fff;}
+.groups_list li .status { float: right; padding: 5px; font-weight: bold; color: #555;}
+.groups_list li .button { float: right; }
+
+#group_icon img.icon { float: left; padding: 7px; border: 1px solid #ccc; margin: 0 10px 10px 0; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fff;}
+#group_info h3 { font-size: 12px; color: #666; margin-bottom: 0;}
+#group_members h2 span { font-weight: normal; font-size: 12px; color: #666;}
+#group_members .members ul, #group_members .members li { margin: 0; padding: 0; list-style: none;}
+#group_members .members li { float: left; width: 210px; margin: 10px; }
+#group_members .members li img.icon { float: left; border: 1px solid #ccc; margin: 0 10px 10px 0; -moz-border-radius: 5px; -webkit-border-radius: 5px;}
+#group_members .members li h3 { font-size: 14px; margin-bottom: 0; }
+#group_members .members li p { font-size: 12px; margin-bottom: 0; }
+
+#post_to_group { border: 1px solid #ccc; padding: 20px; margin-bottom: 20px; }
+#post_to_group h4 { margin-bottom: 0;}
+
+#news ul, #news li { margin: 0; padding: 0; list-style: none;}
+#news li { overflow: auto; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee; position: relative;}
+#news li.last { border-bottom: none;}
+#news li img.icon { float: left; padding: 0px; border: 1px solid #ccc; margin: 0 10px 10px 0; -moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fff;}
+#news li .feed a { font-weight: bold; }
+#news li .feed .ago { font-weight: bold; }
+#news li .details { margin-bottom: 10px;}
+#news li .details h3 { margin-bottom: 0; font-size: 16px; color: #666;}
+#news li .details p.description { margin-bottom: 0; font-size: 12px; color: #333;}
+#news li .timestamp { font-size: 11px; color: #999; }
+
+#news_right ul, #news_right li { margin: 0; padding: 0; list-style: none;}
+#news_right h3 { margin-bottom: 0; font-size: 11px; color: #666;}
+#news_right li { margin-bottom: 10px; font-size: 12px; }
+
+#footer { font-size: 11px; color: #666; margin-top: 20px; display: none;}
+
+form label { display: block; font-size: 14px; font-weight: bold; color: #333;}
+form .text-input, form .text-area { width: 388px; border: 1px solid #ccc; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 5px; }
+form .text-input { font-size: 18px; }
+form .text-area { font-size: 14px; line-height: 1.5em; }
+form .checkbox { float: left;}
+form .submit-button { padding: 10px; border: 1px solid #ccc; background: #dfdfdf url("../images/button_bg.png") repeat-x scroll top center; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 18px; text-shadow: 0px 1px 0px #fff;}
+form .submit-button:hover { border-color: #999; cursor: pointer;}
+
+.formtastic li { list-style: none; margin-bottom: 1.5em; }
+.formtastic li.string input, .formtastic li.password input, .formtastic li.text textarea { font-size: 18px; width: 388px; border: 1px solid #ccc; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 5px; }
+.formtastic li.text textarea { font-size: 12px; }
+.formtastic #group_email_input input { width: 200px; }
+
+.rounded_corners { -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+

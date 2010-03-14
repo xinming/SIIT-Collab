@@ -1,0 +1,14 @@
+#news_right
+  %h2 News and Announcements
+  - @news_by_day.each do |day, items|
+    %h3= day
+    %ul
+      - for item in items
+        %li= "#{link_to item.content.title, '#'} by #{item.user.first_name}"
+%hr
+#your_groups
+  %h2 Groups you belong to
+  - @groups.each do |group|
+    %ul
+      %li= "#{link_to group.name, group_path(group)}"
+

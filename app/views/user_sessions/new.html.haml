@@ -1,0 +1,15 @@
+#login
+  %h1 Login
+  -form_for @user_session, :url => user_session_path do |f|
+    %p= f.error_messages
+    %p
+      = f.label :login, "Login"
+      = f.text_field :login, :class => "text-input"
+    %p
+      = f.label :password, "Password"
+      = f.password_field :password, :class => "text-input"
+    %p
+      = f.check_box :remember_me, :class => "checkbox"
+      = f.label :remember_me, "Remember Me?"
+    %p
+      = f.submit "Login", :class=> "submit-button"

@@ -1,0 +1,76 @@
+#group_icon.grid_1.alpha
+  = image_tag("thumbnails/users32.png", :class => "icon")
+#group_info.grid_7
+  %h1= @group.name
+  %h3 Created by:
+  %p.creator
+    = link_to @group.creator.login
+    = "(#{@group.creator.fullname})"
+  %h3 Description:
+  %p.description= @group.description
+  #post_to_group.rounded_corners
+    %h3 Post to Group by Email
+    %p
+      You can post shares to this group through the group's email:
+      %br
+    %h4= "#{@group.email}@#{AppConfig.domain}"
+  %p#actions
+    - if current_user.is_member_of?(@group) && @group.creator != current_user
+      = link_to(image_tag("icons/door-open-in.png") + " Unjoin", unjoin_group_path(@group), :method => :delete, :class => "button")
+    - elsif not current_user.is_member_of?(@group)
+      = link_to(image_tag("icons/door-open-out.png") + " Join", join_group_path(@group), :method => :post, :class => "button")
+    - if @group.creator == current_user
+      = link_to(image_tag("icons/gear.png") + " Edit", edit_group_path(@group), :class => "button")
+      = link_to(image_tag("icons/cross.png") + " Delete", group_path(@group), :confirm => "Are you sure? All data related to this group will be lost forever.", :method => :delete, :class => "button")
+    or
+    = link_to "Back", join_groups_path
+#group_members.grid_8.omega.block
+  %h2= "Members <span>&mdash; #{@group.members.size} Member(s)</span>"
+  %ul.members
+    - for member in @group.members
+      %li
+        = gravatar(member.email, :class => 'icon', :size => 39)
+        %h3= link_to member.login, '#'
+        %p= member.fullname
+.clear
+%hr
+#news.grid_16.alpha.omega
+  %h3= "Recent Shares"
+  %ul
+    -for item in @shares
+      - classes = "last" if item == @shares.last
+      %li{:class => classes}
+        .icon.grid_1.alpha=gravatar(item.user.email, :class => 'icon', :size => 39)
+        .feed.grid_9.omega
+          - case item.content_type
+            - when 'Video'
+              %p.feed
+                = "#{link_to item.user.fullname} shared a #{link_to('Video', item.content.url)} in #{link_to(item.group.name, item.group)}"
+                %span.ago= "#{time_ago_in_words(item.created_at)} ago"
+              .details
+                %h3.title
+                  = image_tag("../images/#{item.content.class.name.downcase}.png")
+                  = link_to(item.content.title, item.content.url) + " #{image_tag("icons/shortcut-small.png")}"
+                %p.description= auto_link(truncate(item.content.description, :length => 160))
+            - when 'News'
+              %p.feed
+                = "#{link_to item.user.fullname} posted a #{link_to('News', '#')} in #{link_to(item.group.name, item.group)}"
+                %span.ago= "#{time_ago_in_words(item.created_at)} ago"
+              .details
+                %h3.title
+                  = image_tag("../images/#{item.content.class.name.downcase}.png")
+                  = link_to item.content.title, '#'
+                %p.description= auto_link(truncate(item.content.body, :length => 160))
+            - when 'Document'
+              %p.feed
+                = "#{link_to item.user.fullname} shared a #{link_to(item.content.name, '#')} in #{link_to(item.group.name, item.group)}"
+                %span.ago= "#{time_ago_in_words(item.created_at)} ago"
+              .details
+                %h3.title
+                  = image_tag("../images/#{item.content.class.name.downcase}.png")
+                  = link_to item.content.title, item.content.file
+                %p.description= auto_link(truncate(item.content.body, :length => 160))
+          %p.timestamp
+            %span.type= item.content.name + ", "
+            = item.created_at.to_s(:long)
+            = "by #{item.user.login}"

@@ -1,0 +1,12 @@
+%h1 Create new group
+- form_for @group do |f|
+  %p
+    = f.label :name, "Name"
+    = f.text_field :name, :class => "text-input"
+  %p
+    = f.label :description, "Description"
+    = f.text_area :description, :size => "20x5", :class => "text-area"
+  %p
+    = f.submit "Create", :disable_with => 'Creating...', :class => "submit-button"
+    or
+    = link_to "Cancel", :back

@@ -1,0 +1,13 @@
+- form_for @share, :url => shares_path(:type => params[:type], :group => @group) do |f|
+  %p
+    =f.error_messages
+  %p
+    = f.label :title, "Title"
+    = f.text_field :title, :class => "text-input"
+  %p
+    = f.label :body, "Body"
+    = f.text_area :body, :size => "20x5", :class => "text-area"
+  %p
+    = f.submit "Share", :disable_with => 'Sharing...', :class => "submit-button"
+    or
+    = link_to "Cancel", :back

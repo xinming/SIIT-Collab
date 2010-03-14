@@ -1,0 +1,10 @@
+%h1= "#{@group.name} Settings"
+- semantic_form_for @group do |form|
+  = form.inputs :name, :description
+  %fieldset.inputs
+    %ol
+      %li#group_email_input.string.required
+        %label{:for => "group_email"} Email
+        %input#group_email{:name => "group[email]", :type => "text", :value => @group.email}
+        = "@#{AppConfig.domain}"
+  = form.commit_button :label => "Update"

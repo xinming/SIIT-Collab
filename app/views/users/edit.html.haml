@@ -1,0 +1,18 @@
+%h1 Account Settings
+- semantic_form_for @user, :url => user_path do |form|
+  - form.inputs do
+    = form.input :email
+  = form.commit_button :label => "Change Email"
+
+- semantic_form_for 'password', :url => user_path do |form|
+  - form.inputs do
+    %input{:name => '_method', :value => 'put', :type => 'hidden' }
+    = form.input :current_password, :as => :password
+    = form.input :password, :as => :password
+    = form.input :password_confirmation, :as => :password
+
+  = form.commit_button :label => "Change Password"
+
+
+#actions
+  = link_to "Back", user_url

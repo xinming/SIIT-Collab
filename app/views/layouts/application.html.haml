@@ -1,0 +1,41 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %title= (@title || "Untitled" ) + " &mdash siitcollab"
+    = stylesheet_link_tag "reset", "960", "text", "style"
+  %body
+    #header.container_16
+      #logo.grid_5= link_to image_tag("logo.png"), root_url
+      #menu.grid_11
+        %ul
+          %li.left
+          - if current_user
+            %li.user
+              = image_tag("thumbnails/user32.png", :class => "avatar")
+              = link_to current_user.login, user_url
+            %li.sep
+          -for item in @menus
+            - if item[:sep]
+              %li.sep
+            - else
+              %li=link_to item[:name], item[:url], item[:options]
+          %li.right
+      .clear
+    #body
+      .container_16
+        - if not flash.empty?
+          %ul#flash
+            - flash.each do |key, value|
+              %li{ :class => key }= value
+        - if @right
+          #content.grid_10
+            = yield
+          #right.grid_6
+            .content=@right
+        - else
+          #content.grid_16
+            = yield
+        .clear
+        #footer.grid_16
+          =@footer
+        .clear

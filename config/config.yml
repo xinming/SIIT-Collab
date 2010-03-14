@@ -1,0 +1,9 @@
+common:
+ domain: siitcollab.co.cc
+
+production:
+
+development:
+
+test:
+

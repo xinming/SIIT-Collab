@@ -1,0 +1,128 @@
+--- !ruby/object:Gem::Specification 
+name: ruby-gmail
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 0
+  - 8
+  version: 0.0.8
+platform: ruby
+authors: 
+- Daniel Parker
+autorequire: 
+bindir: bin
+cert_chain: 
+- |
+  -----BEGIN CERTIFICATE-----
+  MIIDNjCCAh6gAwIBAgIBADANBgkqhkiG9w0BAQUFADBBMQ0wCwYDVQQDDARnZW1z
+  MRswGQYKCZImiZPyLGQBGRYLYmVoaW5kbG9naWMxEzARBgoJkiaJk/IsZAEZFgNj
+  b20wHhcNMDkxMTE5MDQ0NzIzWhcNMTAxMTE5MDQ0NzIzWjBBMQ0wCwYDVQQDDARn
+  ZW1zMRswGQYKCZImiZPyLGQBGRYLYmVoaW5kbG9naWMxEzARBgoJkiaJk/IsZAEZ
+  FgNjb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDs+2PvSoBC5mCz
+  Nm95RXKOb/u+CmPA70DoG9cF0zipCie003Vm0DYL3Rtobcr32eMvHxkWoJ6xoz0I
+  h74yNKtHjTTCxj86HWBPsE6xVMxVCftClndjCyKsiMiqvvp1wDNO0FFK+6LijmL3
+  2Xkp4brWq1JO92y9vYct34R7o2X//+nwZs+sss+EYhNdvdUJfWy7tA5dghGdLvRn
+  UhJJSAtTefkBCwO7bufLEt+n7wIRbiJJ5dDCwE3NIX4wUSrNeYwXGXA/Ybki+BUl
+  3KJF9IC0XR9fY9DGF0FXBKrkfDlZRrnQOem2aIxeuln0KQLJXXJuDTQPHO+mK3EG
+  UPhR7IAHAgMBAAGjOTA3MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgSwMB0GA1UdDgQW
+  BBQn32ZStKmqwFqs2vuglYzkvDzBZjANBgkqhkiG9w0BAQUFAAOCAQEAe3Z+iMmy
+  IX9ChQW4hNNb1HOpgCMc2RL+vUwku9WE95dZ+BE4A6mOYTj5JXdYf4R4Z2vavr+d
+  nwJWtXPeIBWxireb8gUU0DwqodYTpsmkj5LD1zIaZ59rXlwDA9O0V4fwE1iRG5MD
+  mB7m8fT8WNOeg4AfjH4aSiHI1+HX1RQkc7KFdLotKnCevzYU6Jza5VUbXyJ+yCEH
+  DFARN3mkfGI+18MRDEi39nK2O/bBd6Wf0cYPEKsGQjNNAIBtv9belepSMd1KKfQ2
+  L7j8CnNDCrsHDe7/251D85wSvTH4Q/41NE5ahdCkkHwzDJeyhXpmNuUSswdn7woz
+  teST6sOe8lUhZQ==
+  -----END CERTIFICATE-----
+
+date: 2009-12-23 00:00:00 +07:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: shared-mime-info
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        segments: 
+        - 2
+        - 3
+        - 3
+        version: 2.3.3
+  type: :development
+  version_requirements: *id002
+description: A Rubyesque interface to Gmail, with all the tools you'll need. Search, read and send multipart emails; archive, mark as read/unread, delete emails; and manage labels.
+email: 
+- gems@behindlogic.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- History.txt
+- Manifest.txt
+files: 
+- .autotest
+- History.txt
+- lib/gmail/mailbox.rb
+- lib/gmail/message.rb
+- lib/gmail.rb
+- lib/ietf/rfc2045.rb
+- lib/ietf/rfc822.rb
+- lib/mime/entity.rb
+- lib/mime/message.rb
+- lib/smtp_tls.rb
+- Manifest.txt
+- Rakefile
+- README.markdown
+- test/test_gmail.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://dcparker.github.com/ruby-gmail
+licenses: []
+
+post_install_message: "\n\
+  \e[34mIf ruby-gmail saves you TWO hours of work, want to compensate me for, like, a half-hour?\n\
+  Support me in making new and better gems:\e[0m \e[31;4mhttp://pledgie.com/campaigns/7087\e[0m\n\n"
+rdoc_options: 
+- --main
+- README.markdown
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: ruby-gmail
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: A Rubyesque interface to Gmail, with all the tools you'll need
+test_files: 
+- test/test_gmail.rb
+- test/test_helper.rb

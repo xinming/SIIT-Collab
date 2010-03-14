@@ -1,0 +1,24 @@
+#all_groups.block.groups_list
+  %h2 
+    All Groups
+    %span.description &mdash; All the groups that are available in this domain.
+  .content
+    - if @all_groups.size > 0
+      %ul
+        - for group in @all_groups
+          %li
+            - if group.is_member_of?(current_user)
+              %span.status
+                = image_tag("icons/tick.png")
+                Joined
+            - else
+              = link_to(image_tag("icons/door-open-out.png") + " Join", join_group_path(group), :method => :post, :class => "button")
+            = image_tag("thumbnails/users32.png", :class => "icon")
+            %h3
+              = link_to(group.name, group_path(group))
+              %span= "by #{group.creator.fullname}"
+            %p= truncate(group.description, :length => 160)
+    - else
+      %p 
+        There are currently no groups created.
+        = link_to("Create a group?", new_group_path)
