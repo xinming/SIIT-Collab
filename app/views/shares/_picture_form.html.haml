@@ -1,0 +1,6 @@
+- semantic_form_for @share, :url => shares_path(:type => params[:type], :group => @group) do |form|
+    = form.inputs :title, :body
+    = form.input :image, :as => :file
+    = form.submit "Share", :disable_with => 'Sharing...', :class => "submit-button"
+    or
+    = link_to "Cancel", :back

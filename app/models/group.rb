@@ -24,7 +24,7 @@ class Group < ActiveRecord::Base
   end
   
   def generate_email
-    self.email = name.downcase.gsub(' ', '')
+    self.email = name.downcase.gsub(' ', '') if self.email.blank?
   end
  
 end
