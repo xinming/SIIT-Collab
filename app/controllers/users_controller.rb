@@ -36,7 +36,7 @@ class UsersController < ApplicationController
         flash[:error] = "Settings to \"#{@group.name}\" is not saved because of some errors."
         render :edit
       end
-    else
+    end
   end
 
   # DELETE account_url
