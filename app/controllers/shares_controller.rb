@@ -45,4 +45,10 @@ class SharesController < ApplicationController
     end
   end
   
+  def destroy
+    @item = Share.find(params[:id])
+    @item.destroy
+    flash[:success] = "Share was successfully deleted."
+    redirect_to(root_url)
+  end
 end
