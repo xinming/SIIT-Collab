@@ -12,6 +12,8 @@ class Group < ActiveRecord::Base
   
   image_accessor :image
   
+  before_save :generate_email
+  
   def is_member_of?(user)
     return members.include?(user)
   end 
