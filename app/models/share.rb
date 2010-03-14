@@ -16,6 +16,7 @@ class Share < ActiveRecord::Base
   end
   
   def self.NewFromMime(mime)
+    mime.strip!
     case mime
       when "application/vnd.ms-office"
         Document.new
