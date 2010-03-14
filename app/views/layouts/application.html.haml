@@ -11,7 +11,7 @@
           %li.left
           - if current_user
             %li.user
-              = image_tag("thumbnails/user32.png", :class => "avatar")
+              = gravatar(current_user.email, :class => 'avatar', :size => 39)
               = link_to current_user.login, user_url
             %li.sep
           -for item in @menus
