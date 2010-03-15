@@ -32,10 +32,19 @@
               = image_tag("../images/#{item.content.class.name.downcase}.png")
               = link_to item.content.title, item.content.file
             %p.description= auto_link(truncate(item.content.body, :length => 160))
+        - when 'Picture'
+          %p.feed
+            = "#{link_to item.user.fullname} shared a #{link_to(item.content.name, '#')} in #{link_to(item.group.name, item.group)}"
+            %span.ago= "#{time_ago_in_words(item.created_at)} ago"
+          .details
+            %h3.title
+              = image_tag("../images/icons/#{item.content.class.name.downcase}.png")
+              = link_to item.content.title, item.content.image.url
+            %br
+            = image_tag(item.content.image.url('300x300'))
+            %p.description= auto_link(truncate(item.content.body, :length => 160))
       - if item.user ==  current_user
-        = link_to(image_tag("icons/cross.png") + " Delete", share_path(item), :method => :delete, :class => "button", :confirm => "Are you sure you want to delete this share?")
-        %br
-        %br
+        = link_to(image_tag("icons/cross.png") + " Delete", share_path(item), :method => :delete, :class => "feed_delete button", :confirm => "Are you sure you want to delete this share?")
       %p.timestamp
         %span.type= item.content.name + ", "
         = item.created_at.to_s(:long)
